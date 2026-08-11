@@ -33,3 +33,37 @@ document.querySelectorAll('.acc-trigger').forEach(trigger => {
     }
   });
 });
+
+// ---- Header : ombre au scroll ----
+const siteHeader = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    siteHeader.classList.add('scrolled');
+  } else {
+    siteHeader.classList.remove('scrolled');
+  }
+});
+
+// ---- Révélation au scroll (IntersectionObserver) ----
+const revealEls = document.querySelectorAll('.section, .card, .acc-item, .g-item');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => {
+  if (!el.classList.contains('reveal')) el.classList.add('reveal');
+  observer.observe(el);
+});
+
+// ---- Marquee : dupliquer le contenu pour une boucle parfaite ----
+const marqueeTrack = document.getElementById('marqueeTrack');
+if (marqueeTrack) {
+  const clone = marqueeTrack.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  marqueeTrack.parentNode.appendChild(clone);
+}

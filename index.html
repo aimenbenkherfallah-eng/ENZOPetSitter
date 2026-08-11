@@ -12,9 +12,12 @@
 <body>
 
   <!-- ===== HEADER / NAV ===== -->
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="wrap header-inner">
-      <a href="#home" class="logo">Pawly PetSitter <span>🐾</span></a>
+      <a href="#home" class="logo">
+        <span class="logo-mark" aria-hidden="true">🐾</span>
+        <span class="logo-text">Pawly PetSitter</span>
+      </a>
 
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
         <span></span><span></span><span></span>
@@ -24,6 +27,7 @@
         <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link nav-cta">Book now</a>
       </nav>
@@ -33,8 +37,14 @@
   <main>
 
     <!-- ===== HERO ===== -->
-    <!-- Background photo: set in style.css under ".hero" (images/hero-bg.jpg) -->
     <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-blobs" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+      </div>
+
       <div class="wrap hero-inner">
         <p class="eyebrow">In-home pet sitting & dog walking</p>
         <h1>Pawly: Walk, Care, Love</h1>
@@ -48,17 +58,57 @@
           <a href="#services" class="btn btn-ghost">See services</a>
         </div>
       </div>
-      <div class="hero-icons" aria-hidden="true">
-        <span class="floaty" style="--d:0s">🐾</span>
-        <span class="floaty" style="--d:1.2s">🐕</span>
-        <span class="floaty" style="--d:2.4s">🐈</span>
+
+      <div class="hero-photos" aria-hidden="true">
+        <figure class="hero-photo hero-photo-main">
+          <img src="https://images.pexels.com/photos/11012495/pexels-photo-11012495.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Man walking his dog in the city" loading="eager">
+        </figure>
+        <figure class="hero-photo hero-photo-small hero-photo-a">
+          <img src="https://images.pexels.com/photos/20680840/pexels-photo-20680840.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Two fluffy puppies sitting indoors" loading="eager">
+        </figure>
+        <figure class="hero-photo hero-photo-small hero-photo-b">
+          <img src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Orange tabby cat" loading="eager">
+        </figure>
+        <div class="hero-chip">
+          <span class="chip-paw">🐕</span>
+          <span>Happy pets,<br>peace of mind</span>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-mouse"><span class="scroll-dot"></span></span>
+        <span>Scroll</span>
       </div>
     </section>
 
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner">
+        <div class="marquee-track" id="marqueeTrack">
+          <span>🐾</span><em>Walk</em><span>🐕</span><em>Care</em><span>🐈</span><em>Love</em><span>🦴</span><em>Play</em><span>🐾</span><em>Cuddle</em><span>🐩</span><em>Repeat</em>
+        </div>
+      </div>
+    </div>
+
     <!-- ===== ABOUT ===== -->
-    <!-- Background photo: set in style.css under ".about" (images/about-bg.jpg) -->
     <section id="about" class="section about">
       <div class="wrap about-grid">
+        <div class="about-media" aria-hidden="true">
+          <figure class="about-photo about-photo-main">
+            <img src="https://images.pexels.com/photos/12712908/pexels-photo-12712908.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Man holding his dog">
+          </figure>
+          <figure class="about-photo about-photo-a">
+            <img src="https://images.pexels.com/photos/5749771/pexels-photo-5749771.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Man feeding a dog">
+          </figure>
+          <figure class="about-photo about-photo-b">
+            <img src="https://images.pexels.com/photos/29373007/pexels-photo-29373007.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Two puppies sitting together">
+          </figure>
+          <div class="about-badge">
+            <span class="badge-paw">🐾</span>
+            <span>100%<br>in-home</span>
+          </div>
+        </div>
+
         <div class="about-text">
           <p class="eyebrow">About us</p>
           <h2>Welcome to Pawly PetSitter!</h2>
@@ -72,57 +122,111 @@
             <li>🐩 Trained, carefully screened sitters</li>
             <li>🐈 Photo & video updates after every visit</li>
           </ul>
+          <a href="#contact" class="btn btn-primary about-cta">Book a free meet &amp; greet</a>
         </div>
-        
       </div>
     </section>
 
     <!-- ===== SERVICES ===== -->
     <section id="services" class="section services">
       <div class="wrap">
-        <p class="eyebrow center">Services</p>
-        <h2 class="center">How We Take Care of Them</h2>
-        <h3>We are more than happy to offer you the best pet care service while you are away.</h3>
-        <ul class="about-list">
-            <li>🦴 Feeding & freshwater.</li>
-            <li>💧 Cleaning bowls/fountain.</li>
-            <li>🗑 Litter box maintenance, potty breaks and cleaning up pet accidents.</li>
-            <li>🐶 Playtime, cuddling, lots of love, belly rubs and one-on-one attention.</li>
-            <li>🚿 Brushing (if necessary)</li>
-            <li>❤️ Care for special needs</li>
-            <li>🌿 Watering plants</li>
-            <li>✉︎ Detailed daily regular reports with photos and videos to the owner via WhatsApp and Time to Pet App.</li>
+        <div class="section-head">
+          <p class="eyebrow center">Services</p>
+          <h2 class="center">How We Take Care of Them</h2>
+          <h3 class="center">We are more than happy to offer you the best pet care service while you are away.</h3>
+        </div>
 
-
-          </ul>
-        
+        <ul class="about-list services-list">
+          <li>🦴 Feeding &amp; freshwater.</li>
+          <li>💧 Cleaning bowls/fountain.</li>
+          <li>🗑 Litter box maintenance, potty breaks and cleaning up pet accidents.</li>
+          <li>🐶 Playtime, cuddling, lots of love, belly rubs and one-on-one attention.</li>
+          <li>🚿 Brushing (if necessary)</li>
+          <li>❤️ Care for special needs</li>
+          <li>🌿 Watering plants</li>
+          <li>✉︎ Detailed daily regular reports with photos and videos to the owner via WhatsApp and Time to Pet App.</li>
+        </ul>
 
         <div class="cards">
           <article class="card">
-            <span class="card-icon" aria-hidden="true">🐕</span>
-            <h3>Pet Sitting</h3>
-            <p class="card-meta">40 or 60 minute visit</p>
-            <p>We spend time with your pet : feeding, play, cuddles,
-              and keeping their routine on track.</p>
+            <div class="card-media" aria-hidden="true">
+              <img src="https://images.pexels.com/photos/16299046/pexels-photo-16299046.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sleeping puppy at home">
+            </div>
+            <div class="card-body">
+              <span class="card-icon" aria-hidden="true">🐕</span>
+              <h3>Pet Sitting</h3>
+              <p class="card-meta">40 or 60 minute visit</p>
+              <p>We spend time with your pet : feeding, play, cuddles,
+                and keeping their routine on track.</p>
+            </div>
           </article>
 
           <article class="card card-premium">
-            <span class="card-icon" aria-hidden="true">🐩</span>
-            <h3>Premium Dog Walking <span class="badge">Premium</span></h3>
-            <p class="card-meta">40–60 minute walk</p>
-            <p>A full outing to burn off energy, with plenty of attention
-              and a bit of adventure along the way — plus a dedicated pet
-              file (food, medication & care notes) and a detailed condition
-              report sent to you after every walk.</p>
+            <div class="card-media" aria-hidden="true">
+              <img src="https://images.pexels.com/photos/7256826/pexels-photo-7256826.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Two puppies playing outdoors">
+            </div>
+            <div class="card-body">
+              <span class="card-icon" aria-hidden="true">🐩</span>
+              <h3>Premium Dog Walking <span class="badge">Premium</span></h3>
+              <p class="card-meta">40–60 minute walk</p>
+              <p>A full outing to burn off energy, with plenty of attention
+                and a bit of adventure along the way — plus a dedicated pet
+                file (food, medication &amp; care notes) and a detailed condition
+                report sent to you after every walk.</p>
+            </div>
           </article>
 
           <article class="card">
-            <span class="card-icon" aria-hidden="true">🐈‍⬛</span>
-            <h3>Overnight Stay</h3>
-            <p class="card-meta">12 hours, 8pm to 8am</p>
-            <p>A reassuring presence all night long, with evening and
-              morning walks included.</p>
+            <div class="card-media" aria-hidden="true">
+              <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cat sleeping peacefully">
+            </div>
+            <div class="card-body">
+              <span class="card-icon" aria-hidden="true">🐈‍⬛</span>
+              <h3>Overnight Stay</h3>
+              <p class="card-meta">12 hours, 8pm to 8am</p>
+              <p>A reassuring presence all night long, with evening and
+                morning walks included.</p>
+            </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="section gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow center">Gallery</p>
+          <h2 class="center">Life at Pawly</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="g-item g-tall">
+            <img src="https://images.pexels.com/photos/11012495/pexels-photo-11012495.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Man walking a dog on a sidewalk">
+          </figure>
+          <figure class="g-item">
+            <img src="https://images.pexels.com/photos/674570/pexels-photo-674570.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Calico cat lying on a cushion">
+          </figure>
+          <figure class="g-item">
+            <img src="https://images.pexels.com/photos/20680840/pexels-photo-20680840.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Two puppies indoors">
+          </figure>
+          <figure class="g-item g-wide">
+            <img src="https://images.pexels.com/photos/7256826/pexels-photo-7256826.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Two puppies playing outside">
+          </figure>
+          <figure class="g-item">
+            <img src="https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Orange tabby cat near a window">
+          </figure>
+          <figure class="g-item">
+            <img src="https://images.pexels.com/photos/32080246/pexels-photo-32080246.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Two puppies on a sunny day">
+          </figure>
+          <figure class="g-item g-tall">
+            <img src="https://images.pexels.com/photos/12712908/pexels-photo-12712908.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Man holding his dog">
+          </figure>
+          <figure class="g-item">
+            <img src="https://images.pexels.com/photos/16299046/pexels-photo-16299046.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Puppy sleeping outdoors">
+          </figure>
+          <figure class="g-item">
+            <img src="https://images.pexels.com/photos/29373007/pexels-photo-29373007.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Two puppies sitting together">
+          </figure>
         </div>
       </div>
     </section>
@@ -130,8 +234,10 @@
     <!-- ===== WORKS ===== -->
     <section class="section how">
       <div class="wrap">
-        <p class="eyebrow center">How it works</p>
-        <h2 class="center">The journey, step by step</h2>
+        <div class="section-head">
+          <p class="eyebrow center">How it works</p>
+          <h2 class="center">The journey, step by step</h2>
+        </div>
 
         <ol class="route">
           <li>
@@ -144,7 +250,7 @@
           <li>
             <span class="stop-dot"></span>
             <div>
-              <h3>Free meet & greet</h3>
+              <h3>Free meet &amp; greet</h3>
               <p>A first visit to learn your pet's habits and routine.</p>
             </div>
           </li>
@@ -169,8 +275,10 @@
     <!-- ===== FAQ ===== -->
     <section id="faq" class="section faq">
       <div class="wrap">
-        <p class="eyebrow center">FAQ</p>
-        <h2 class="center">Frequently asked questions</h2>
+        <div class="section-head">
+          <p class="eyebrow center">FAQ</p>
+          <h2 class="center">Frequently asked questions</h2>
+        </div>
 
         <div class="accordion">
           <div class="acc-item">
@@ -180,7 +288,7 @@
             </button>
             <div class="acc-panel">
               <p>Contact us with your dates. We'll then set up a free
-                meet & greet before any first service.</p>
+                meet &amp; greet before any first service.</p>
             </div>
           </div>
 
@@ -212,7 +320,7 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section contact">
       <div class="wrap contact-inner">
-        <div>
+        <div class="contact-info">
           <p class="eyebrow">Contact Us</p>
           <h2>Let's talk</h2>
           <p>Tell us when you're leaving, we'll take care of the rest.</p>
@@ -221,25 +329,27 @@
             <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.8c1.9 1 4 1.5 6.3 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.6 1.1 1.1-4.4-.2-.4C5.5 18.4 5 16.7 5 15c0-5.5 4.5-10 11-10z" fill="none"/><path d="M22.2 18.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
             <span>Chat on WhatsApp</span>
           </a>
-          <h3><br><br>Contact Us on Social Media here</h3>
-                   <div id="sicone" class="social-icons">
-                    
-                    <a id="icone1" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                    <a id="icone2" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-            
-                   </div>
 
+          <div class="contact-block">
+            <h3>Contact Us on Social Media here</h3>
+            <div id="sicone" class="social-icons">
+              <a id="icone1" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+              <a id="icone2" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
 
-          <h3><br><br><span>🏠︎</span> Doha - Qatar</h3>
-          <p>The Pearl | Lusail Marina | West Bay</p>
-          <h3><br><br><span>📅</span> Disponible Hours</h3>
-          <p>
-            <ul>
+          <div class="contact-block">
+            <h3><span>🏠︎</span> Doha - Qatar</h3>
+            <p>The Pearl | Lusail Marina | West Bay</p>
+          </div>
+
+          <div class="contact-block">
+            <h3><span>📅</span> Disponible Hours</h3>
+            <ul class="hours-list">
               <li>Saturday to Thursday: 8am to 7pm</li>
               <li>Friday - Closed BUT we still pet sit and dog walk on this day!</li>
             </ul>
-          </p>
-
+          </div>
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/xvzedvvq" method="POST">
@@ -261,6 +371,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
+    <div class="footer-paw" aria-hidden="true">🐾</div>
     <div class="wrap footer-inner">
       <p>© 2026 Pawly PetSitter — All rights reserved</p>
       <div class="footer-links">
@@ -272,6 +383,7 @@
   </footer>
 
   <a href="https://wa.me/97430121572" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <span class="wa-ring" aria-hidden="true"></span>
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M22.2 18.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.8c1.9 1 4 1.5 6.3 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.6 1.1 1.1-4.4-.2-.4C5.5 18.4 5 16.7 5 15c0-5.5 4.5-10 11-10z"/></svg>
   </a>
 
